@@ -13,7 +13,7 @@ export class Transaction {
             this.asset.quantity += this.quantity;
         } else if (this.type === "sell") {
             if (this.asset.quantity < this.quantity) {
-                throw new Error(`Insufficient quantity for sale of ${this.asset.name}`);
+                throw new Error(`Not enough quantity for ${this.asset.name}`);
             }
             this.asset.quantity -= this.quantity;
     }}
